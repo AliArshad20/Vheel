@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "349418925536",
+    "project_id": "veeluser",
+    "storage_bucket": "veeluser.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349418925536:android:24f6cac177f18793d1cf85",
+        "android_client_info": {
+          "package_name": "com.example.veeluser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349418925536-8c7hljrt5nolvbc889lg5ceea2ia1ire.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.veeluser",
+            "certificate_hash": "857e5c427a2018ed34236fae62ad43526ae3e74d"
+          }
+        },
+        {
+          "client_id": "349418925536-kskibeum40tehc3a8ovqf75s1ihfv3qb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoXG73dGjXKUHuvIEHmYDyDUdcVzzX7-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349418925536-kskibeum40tehc3a8ovqf75s1ihfv3qb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
