@@ -19,9 +19,6 @@ final lon =TextEditingController();
 double a=double.parse('${lat.text.toString()}');
 double b=double.parse('${lon.text.toString()}');
 
-
-var apiKey = 'AIzaSyBGK2o9qCoHOxTVXh5LMgkkX5clKnMGDms';
-
 class MapSampleState extends State<MapSample> {
   Completer<GoogleMapController> _controller = Completer();
 
