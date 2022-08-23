@@ -133,13 +133,4 @@ class _BrainTreeState extends State<BrainTree> {
             //     }
             //   },
             //   child: Text('PAYPAL CHECKOUT FLOW'),
-            // ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
-// tokenizationKey
-// sandbox_zj26wj8w_jbsyxhjvfdty27fk
