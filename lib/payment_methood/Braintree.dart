@@ -9,7 +9,7 @@ class BrainTree extends StatefulWidget {
 }
 
 class _BrainTreeState extends State<BrainTree> {
-  static final String tokenizationKey = 'sandbox_zj26wj8w_jbsyxhjvfdty27fk';
+  static final String tokenizationKey = 'key-here';
 
   void showNonce(BraintreePaymentMethodNonce nonce) {
     showDialog(
