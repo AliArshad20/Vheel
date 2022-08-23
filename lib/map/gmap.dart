@@ -14,7 +14,6 @@ static const routeName='//';
   @override
   State<VeelMap> createState() => VeelMapState();
 }
-var apiKey='AIzaSyCLwxQ0-Dm5XXCSQMUmyWcVGi8U_rts8CI';
 
 class VeelMapState extends State<VeelMap> {
   Completer<GoogleMapController> _controller = Completer();
