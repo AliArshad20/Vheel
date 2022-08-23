@@ -45,7 +45,7 @@ class _BrainTreeState extends State<BrainTree> {
             // ElevatedButton(
             //   onPressed: () async {
             //     var request = BraintreeDropInRequest(
-            //       tokenizationKey: 'sandbox_mfcyvjdp_4bnxvq8cmsyr9mrg',
+            //       tokenizationKey: '',
             //       collectDeviceData: true,
             //       paypalRequest: BraintreePayPalRequest(
             //         displayName: 'M Awais',
@@ -89,7 +89,7 @@ class _BrainTreeState extends State<BrainTree> {
             // ElevatedButton(
             //   onPressed: () async {
             //     final request = BraintreeCreditCardRequest(
-            //       cardNumber: '4111111111111111',
+            //       cardNumber: '111111111',
             //       expirationMonth: '12',
             //       expirationYear: '2021',
             //       cvv: '123',
