@@ -269,7 +269,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             padding: const EdgeInsets.only(
                                 right: 18, bottom: 10, left: 18),
                             child: TextFormField(
-                                controller: name2,
+                                controller: refCode,
                                 style: TextStyle(fontSize: 19),
                                 decoration: InputDecoration(
                                   hintText: 'Last Name',
@@ -308,7 +308,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
-                                right: 18, bottom: 10, left: 18),
+                                right: 10, bottom: 10, left: 18),
                             child: TextFormField(
                                 controller: email,
                                 style: TextStyle(fontSize: 19),
@@ -338,28 +338,28 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 },
                                 validator: (value) {
                                   if (value!.isEmpty) {
-                                    return 'Please enter an email';
+                                    return 'Please an email';
                                   }
                                   if (!value.endsWith('.com') ||
                                       !value.contains('@')) {
-                                    return 'Please enter a valid email';
+                                    return 'Please valid email';
                                   }
                                 }),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
-                                right: 18, bottom: 10, left: 18),
+                                right: 18, bottom: 10, left: 10),
                             child: TextFormField(
-                                controller: refCode,
+                                controller: controllerEd,
                                 style: TextStyle(fontSize: 19),
                                 decoration: InputDecoration(
                                   hintText: 'ID',
                                   prefixIcon: Padding(
                                     padding: const EdgeInsets.only(
                                         left: 15.0,
-                                        right: 15,
+                                        right: 10,
                                         top: 15,
-                                        bottom: 15),
+                                        bottom: 10),
                                     child: Container(
                                       height: 0.8.sp,
                                       width: 0.1.sp,
@@ -432,7 +432,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 catch (error) {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(SnackBar(
-                                      duration: Duration(seconds: 3),
+                                      duration: Duration(seconds: 0),
                                       content: Row(
                                         mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -440,7 +440,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                           Text(
                                             'Please provide an image',
                                             style:
-                                            TextStyle(fontSize: 13.sp),
+                                            TextStyle(fontSize: 10.sp),
                                           ),
                                         ],
                                       )));
@@ -449,7 +449,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               child: Center(
                                 child: Text(
                                   'REGISTER',
-                                  style: TextStyle(fontSize: 21.sp),
+                                  style: TextStyle(fontSize: 5.sp),
                                 ),
                               ),
                               style: ButtonStyle(
@@ -458,9 +458,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                         borderRadius:
                                             BorderRadius.circular(10))),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.black),
+                                    MaterialStateProperty.all(Colors.white),
                                 minimumSize:
-                                    MaterialStateProperty.all(Size(92.w, 5.h)),
+                                    MaterialStateProperty.all(Size(9.w, 5.h)),
                               ),
                             ),
                           ),
