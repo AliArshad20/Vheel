@@ -14,10 +14,6 @@ class MapSample extends StatefulWidget {
   @override
   State<MapSample> createState() => MapSampleState();
 }
-final lat =TextEditingController();
-final lon =TextEditingController();
-double a=double.parse('${lat.text.toString()}');
-double b=double.parse('${lon.text.toString()}');
 
 class MapSampleState extends State<MapSample> {
   Completer<GoogleMapController> _controller = Completer();
@@ -32,9 +28,7 @@ class MapSampleState extends State<MapSample> {
   Marker? _origin;
   Marker? _destination;
 
-  LatLng Origin = LatLng(32.076591332455973653343, 72.698683849278007);
-  LatLng Destination = LatLng(32.076591332455973653343, 72.698683849278007);
-
+  
   final orig = TextEditingController();
   final dest = TextEditingController();
   final customLocation = TextEditingController();
@@ -98,12 +92,7 @@ class MapSampleState extends State<MapSample> {
     controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 
-  static final _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(92, 39),
-      tilt: 59.440717697143555,
-      zoom: 13.151926040649414);
-
+  
   @override
   Widget build(BuildContext context) {
     getUserId();
@@ -310,67 +299,7 @@ class MapSampleState extends State<MapSample> {
                                     Destination1: dest.text.toString(),
                                   )));
                   }
-                  if (_origin == null &&
-                      _destination == null &&
-                      manualLoc == false &&
-                      customLocation.text.toString().isEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      duration: Duration(seconds: 4),
-                      content: Text(
-                        'Please provide location and destination',
-                        style: TextStyle(fontSize: 13.sp),
-                      ),
-                    ));
-                  }
-                  if (_origin != null && _destination != null) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      duration: Duration(minutes: 2),
-                      content: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Processing Data...',
-                            style: TextStyle(fontSize: 13.sp),
-                          ),
-                          CircularProgressIndicator(),
-                        ],
-                      ),
-                    ));
-                    // await latlng();
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => FindRide(
-                                Origin1: Origin.toString(),
-                                Destination1: Destination.toString())));
-                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                  }
-                  // if (customLocation.text.toString() == 'LatLng(39,92)') {
-                  //   _goToTheLake();
-
-                  setState((){
-                    // if(a!=null&&b!=null)
-                    print(lat);
-                  });
-                  // }
-                  if (customLocation.text.toString() != 'LatLng(39,92)' &&
-                      _origin == null &&
-                      _destination == null &&
-                      manualLoc == false) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      duration: Duration(seconds: 2),
-                      content: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Can't find location",
-                            style: TextStyle(fontSize: 13.sp),
-                          ),
-                        ],
-                      ),
-                    ));
-                  }
-                },
+                  
                 child: Container(
                   margin: EdgeInsets.only(bottom: 28.sp),
                   decoration: BoxDecoration(
