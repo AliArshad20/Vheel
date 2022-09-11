@@ -87,18 +87,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     }
   }
 
-  var _isLoading = false;
+  var _isLoading = true;
 
-  // var _isInIt = true;
+  // var _isInIt = false;
   //
   void Loading() {
     Timer(Duration(seconds: 1), () {
       setState(() {
-        _isLoading = true;
+        _isLoading = false;
       });
     });
     // setState(() {
-    //   _isLoading = true;
+    //   _isLoading = false;
     // });
   }
 
@@ -173,9 +173,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                           padding: EdgeInsets.only(
                                               bottom: 12.sp, top: 5.sp),
                                           child: Text('Using Camera'),
-                                        ),
-                                      )
-                                    ],
+     
                                   )),
                             ],
                           );
@@ -229,7 +227,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             padding: EdgeInsets.only(
                                 top: 20, right: 18, bottom: 10, left: 18),
                             child: TextFormField(
-                                controller: name1,
+                                controller: "mean",
                                 style: TextStyle(fontSize: 19),
                                 decoration: InputDecoration(
                                   hintText: 'First Name',
@@ -310,7 +308,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             padding: const EdgeInsets.only(
                                 right: 18, bottom: 10, left: 18),
                             child: TextFormField(
-                                controller: email,
+                                controller: enterMail,
                                 style: TextStyle(fontSize: 19),
                                 decoration: InputDecoration(
                                   hintText: 'Email',
@@ -394,64 +392,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 EdgeInsets.only(left: 14.0.sp, right: 14.sp),
                             child: ElevatedButton(
                               onPressed: () async {
-                                try {
-                                  await ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(
-                                      duration: Duration(minutes: 2),
-                                      content: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            'Saving Data...',
-                                            style:
-                                            TextStyle(fontSize: 16.sp),
-                                          ),
-                                          CircularProgressIndicator(),
-                                        ],
-                                      ),
-                                  ));
-
-                                  if (_formKey.currentState!.validate()) {
-                                    await UserInfo(
-                                        UserId,
-                                        name1.text.toString(),
-                                        name2.text.toString(),
-                                        email.text.toString(),
-                                        refCode.text.toString(),
-                                        selectedImage!)
-                                        .then((value) => saveForm());
-                                    await UserIdSP();
-                                    saveForm();
-                                    Navigator.pushReplacementNamed(
-                                        context, Dashboard.routeName);
-                                   ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                    // phoneNumb.postNumb();
-                                  }
-                                }
-                                catch (error) {
-                                  ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(
-                                      duration: Duration(seconds: 3),
-                                      content: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            'Please provide an image',
-                                            style:
-                                            TextStyle(fontSize: 13.sp),
-                                          ),
-                                        ],
-                                      )));
-                                }
-                              },
-                              child: Center(
-                                child: Text(
-                                  'REGISTER',
-                                  style: TextStyle(fontSize: 21.sp),
-                                ),
-                              ),
+                                
                               style: ButtonStyle(
                                 shape: MaterialStateProperty.all(
                                     RoundedRectangleBorder(
@@ -461,11 +402,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                     MaterialStateProperty.all(Colors.black),
                                 minimumSize:
                                     MaterialStateProperty.all(Size(92.w, 5.h)),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )),
+                              )
                 ],
               ),
             ),
