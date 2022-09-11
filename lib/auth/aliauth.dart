@@ -48,12 +48,6 @@ class _AuthHandlerState extends State<AuthHandler> {
           'https://veeluser-default-rtdb.firebaseio.com/UserInfo/$userId.json'));
 
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
-      print(userId);
-      if (extractedData != null) {
-        SharedPreferences preferences = await SharedPreferences.getInstance();
-        preferences.setString('Id', userId!);
-        Navigator.pushNamed(context, Dashboard.routeName);
-      }
     } catch (error) {
       Navigator.pushNamed(context, RegistrationScreen.routeName,
           arguments: userId);
@@ -170,7 +164,7 @@ class _AuthHandlerState extends State<AuthHandler> {
                                     if (_enteredOtp!.length == 6) {
                                       final valid =
                                           await FirebasePhoneAuthService
-                                              .verifyOTP(otp: _enteredOtp!);
+                                              .verifyOTP();
 
                                       if (!valid) {
                                         ScaffoldMessenger.of(context)
@@ -183,8 +177,7 @@ class _AuthHandlerState extends State<AuthHandler> {
                                       }
                                       if (valid) {
                                         // await http.post(Uri.parse(
-                                        //     'https://veeluser-default-rtdb.firebaseio.com/UserInfo/$userId.json'));
-                                        await userIdFB();
+                                        //     'https://veeluser-default-rtdb.firebaseio.com/UserInfo/$userId.j
                                       }
                                     }
                                   },
