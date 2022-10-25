@@ -22,8 +22,7 @@ import 'package:firebase_phone_auth_handler/firebase_phone_auth_handler.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+firebaseInitialize;
   runApp(const MyApp());
 }
 
@@ -33,8 +32,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Sizer(builder:
-        (BuildContext context, Orientation orientation, DeviceType deviceType) {
+    return Sizer(builder: () {
       return ChangeNotifierProvider(
           create: (_) => UserData(),
           child: FirebasePhoneAuthProvider(
